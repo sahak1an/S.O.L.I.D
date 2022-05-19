@@ -4,30 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Car {
-    private static List<Object> cars = new ArrayList<>();
+    private static List<MarkPrinter> cars = new ArrayList<>();
 
 
     public void printCars(){
-        for (Object car : cars) {
-            if (car instanceof Bmw){
-                printBmw(car);
-            }else if (car instanceof Audi){
-                printAudi(car);
-            }
+        for (MarkPrinter car : cars) {
+            car.printMark();
         }
     }
 
-    private void printAudi(Object car) {
-        Audi audi = (Audi) car;
-        System.out.println(audi.mark);
+    static interface MarkPrinter{
+        void printMark();
     }
 
-    private void printBmw(Object car) {
-        Bmw bmw = (Bmw) car;
-        System.out.println(bmw.mark);
-    }
-
-    static class Bmw {
+    static class Bmw implements MarkPrinter{
         private final String mark;
 
         Bmw(String mark) {
@@ -37,9 +27,14 @@ public class Car {
         public String getMark() {
             return mark;
         }
+
+        @Override
+        public void printMark() {
+            System.out.println(mark);
+        }
     }
 
-    static class Audi {
+    static class Audi implements MarkPrinter{
         private final String mark;
 
         Audi(String mark) {
@@ -48,6 +43,11 @@ public class Car {
 
         public String getMark() {
             return mark;
+        }
+
+        @Override
+        public void printMark() {
+            System.out.println(mark);
         }
     }
 }
