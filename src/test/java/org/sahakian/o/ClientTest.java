@@ -10,7 +10,7 @@ class ClientTest {
     @Test
     void sendServer1() {
         server = new ServerImpl();
-        
+
         Client client = new Client(server);
 
         String res = client.send("Todo");
