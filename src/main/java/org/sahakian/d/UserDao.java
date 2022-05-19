@@ -2,10 +2,11 @@ package org.sahakian.d;
 
 import java.sql.Driver;
 
-public class UserDao {
+public class UserDao implements UserDaoService{
     private Driver dbDriver;
 
-    public String findById(int id){
+    @Override
+    public String find(int id) {
         return "TODO";
     }
 }
