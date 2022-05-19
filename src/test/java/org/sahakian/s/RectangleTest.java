@@ -8,7 +8,7 @@ class RectangleTest {
 
     @Test
     void getArea() {
-        Rectangle rectangle = new Rectangle(4, 5);
+        GeometricRectangle rectangle = new GeometricRectangle(4, 5);
 
         int area = rectangle.getArea();
 

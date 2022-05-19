@@ -4,16 +4,10 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Rectangle extends JComponent {
-    private final int a;
-    private final int b;
+    private final GeometricRectangle geometricRectangle;
 
-    public Rectangle(int a, int b) {
-        this.a = a;
-        this.b = b;
-    }
-
-    public int getArea() {
-        return a * b;
+    public Rectangle(GeometricRectangle geometricRectangle) {
+        this.geometricRectangle = geometricRectangle;
     }
 
     @Override
